@@ -7,3 +7,7 @@ const user = {
     balance: 100,
     transactions: []
 }
+
+function getUser() {
+    return user
+}

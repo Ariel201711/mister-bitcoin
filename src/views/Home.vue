@@ -1,9 +1,29 @@
 <template>
-  <h1>Home Page</h1>
+  <header>
+    <h1>Hello {{user.name}}, Your Balance is: ${{user.balance}}</h1>
+    <h3>Bitcoin Rate: {{bitcoinRate}}</h3>
+  </header>
 </template>
 
 <script>
-  export default {
-    
+import { userService } from "@/services/user.service.js";
+import { bitcoinService } from "@/services/bitcoin.service.js";
+export default {
+  data() {
+    return {
+      user: null,
+      bitcoinRate: '',
+    }
+  },
+  created() {
+    this.user = userService.getUser()
+    this.bitcoinRate = bitcoinService.getRate()
+  },
+  methods: {
+
+  },
+  computed: {
+
   }
+}
 </script>

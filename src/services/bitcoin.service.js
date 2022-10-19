@@ -24,3 +24,15 @@ export const bitcoinService = {
     getMarketPriceHistory,
     getAvgBlockSize,
 }
+
+function getRate() {
+    return '0%'
+}
+
+function getMarketPriceHistory() {
+    return 'No History'
+}
+
+function getAvgBlockSize() {
+    return '50'
+}

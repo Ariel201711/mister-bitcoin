@@ -3,7 +3,7 @@ export const contactService = {
     getContactById,
     deleteContact,
     saveContact,
-    getEmptyContact
+    getEmptyContact,
 }
 
 const contacts = [
@@ -139,7 +139,7 @@ function sort(arr) {
 
 function getContacts(filterBy = null) {
     return new Promise((resolve, reject) => {
-        var contactsToReturn = contacts;
+        var contactsToReturn = contacts
         if (filterBy && filterBy.term) {
             contactsToReturn = filter(filterBy.term)
         }
