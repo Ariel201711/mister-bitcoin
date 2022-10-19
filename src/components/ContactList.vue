@@ -2,9 +2,9 @@
     <section class="contact-list">
         <h1>Contact List</h1>
         <ul>
-            <li v-for="contact in contacts"        :key="contact._id">
+            <li v-for="contact in contacts" :key="contact._id">
                 <ContactPreview :contact="contact"/>
-                <ContactActions :contact="contact" :onRemoveContact="onRemoveContact"/>
+                <ContactActions :contact="contact" @onRemoveContact="onRemoveContact"/>
             </li>
 
         </ul>
@@ -23,6 +23,7 @@
         },
         methods:{
             onRemoveContact(contactId){
+                console.log(contactId)
                 this.$emit('contact-removed', contactId)
             },
         },

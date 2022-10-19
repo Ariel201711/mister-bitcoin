@@ -1,5 +1,8 @@
 <template>
     <ContactFilter @filter="onSetFilter"/>
+    <button>
+      <RouterLink :to="`/contact/edit`">Add Contact</RouterLink>
+    </button>
     <ContactList @contact-removed="onRemoveContact" :contacts="contactsToShow"/>
 </template>
 
@@ -24,8 +27,6 @@ export default {
         try {
             const updatedContacts = await contactService.deleteContact(contactId)
             this.contacts = [...updatedContacts]
-            console.log('updatedContacts:', updatedContacts)
-            console.log('this.contacts:', this.contacts)
         } catch {
             console.log('cannot remove contact!')
         }

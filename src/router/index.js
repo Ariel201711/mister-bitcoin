@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Contact from '../views/Contact.vue'
+import ContactEdit from '../views/ContactEdit.vue'
 import ContactDetails from '../views/ContactDetails.vue'
 import Stats from '../views/Stats.vue'
 
@@ -16,6 +17,11 @@ const routerOptions = {
       path: '/contact',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/contact/edit/:_id?',
+      name: 'contact edit',
+      component: ContactEdit
     },
     {
       path: '/contact/:_id',
