@@ -15,12 +15,13 @@ import ContactList from '@/components/ContactList.vue'
 export default {
   data() {
     return {
-      contacts: [],
+      // contacts: [],
       filterBy: {},
     }
   },
   async created() {
-    this.contacts = await contactService.getContacts()
+    // this.contacts = await contactService.getContacts()
+    this.$store.dispatch({ type: 'loadContacts' })
   },
   methods: {
     async onRemoveContact(contactId) {
@@ -40,6 +41,7 @@ export default {
         const regex = new RegExp(this.filterBy.name, 'i')
         return this.contacts.filter(contact => regex.test(contact.name))       
     },
+    contacts() { return this.$store.getters.contacts }
   },
   components: {
     ContactFilter,

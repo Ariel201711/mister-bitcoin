@@ -4,7 +4,7 @@
         <ul>
             <li v-for="contact in contacts" :key="contact._id">
                 <ContactPreview :contact="contact"/>
-                <ContactActions :contact="contact" @onRemoveContact="onRemoveContact"/>
+                <ContactActions :contact="contact" @removeContact="onRemoveContact"/>
             </li>
 
         </ul>
