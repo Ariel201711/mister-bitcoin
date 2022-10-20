@@ -56,14 +56,6 @@ async function getCurrencyOptions() {
     return options
 }
 
-/*
-    coverting to date:
-    function getDate(value) {
-        const newDate = new Date(value.x * 1000)
-        const dateToDisplay = new Intl.DateTimeFormat("en-US").format(newDate)
-    }
-*/
-
 async function getMarketPriceHistory() {
     let marketPriceHistory = storageService.load('MARKET_PRICE_DATA')
     if (!marketPriceHistory) {
