@@ -1,5 +1,5 @@
 export const userService = {
-    getUser,
+    getLoggedinUser,
 }
 
 const user = {
@@ -8,6 +8,6 @@ const user = {
     transactions: []
 }
 
-function getUser() {
+function getLoggedinUser() {
     return user
 }

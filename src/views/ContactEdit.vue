@@ -30,7 +30,8 @@ export default {
   },
   methods: {
     async onSave() {
-      await contactService.saveContact(this.contact)
+      // await contactService.saveContact(this.contact)
+      this.$store.dispatch({ type: 'saveContact', contact: this.contact})      
       this.$router.back()
     },
   },

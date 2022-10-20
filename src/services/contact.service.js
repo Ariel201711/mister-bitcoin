@@ -122,18 +122,18 @@ const contacts = [
         "email": "lillyconner@renovize.com",
         "phone": "+1 (842) 587-3812"
     }
-];
+]
 
 function sort(arr) {
     return arr.sort((a, b) => {
         if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
-            return -1;
+            return -1
         }
         if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
-            return 1;
+            return 1
         }
 
-        return 0;
+        return 0
     })
 }
 
@@ -150,7 +150,7 @@ function getContacts(filterBy = null) {
 function getContactById(id) {
     return new Promise((resolve, reject) => {
         const contact = contacts.find(contact => contact._id === id)
-        contact ? resolve(contact) : reject(`Contact id ${id} not found!`)
+        contact ? resolve({...contact}) : reject(`Contact id ${id} not found!`)
     })
 }
 
@@ -161,7 +161,7 @@ function deleteContact(id) {
             contacts.splice(index, 1)
         }
 
-        resolve(contacts)
+        resolve([...contacts])
     })
 }
 

@@ -4,15 +4,36 @@ export default {
         contacts: [],
     },
     mutations: {
-        setContacts(state, { contacts }){
+        setContacts(state, { contacts }) {
             state.contacts = contacts
         },
+        removeContact(state, { contactId }) {
+            const idx = state.contacts.findIndex(contact => contact._id === contactId)
+            state.contacts.splice(idx, 1)
+        },
+        saveContact(state, { contact }){
+            const contactId = contact._id
+            const idx = state.contacts.findIndex(contact => contact._id === contactId)
+            state.contacts.splice(idx, 1, contact)
+        }        
     },
     actions: {
-        async loadContacts(context){
+        async loadContacts(context) {
             const contacts = await contactService.getContacts()
             context.commit({ type: 'setContacts', contacts })
         },
+        async removeContact({ commit }, { contactId }) {
+            try {
+                await contactService.deleteContact(contactId)
+            } catch {
+                console.log('cannot remove contact!')
+            }
+            commit({ type: 'removeContact', contactId })
+        },
+        async saveContact({ commit }, { contact }) {
+            await contactService.saveContact(contact)
+            commit({ type: 'saveContact', contact })
+        }   
     },
     getters: {
         contacts(state) { return state.contacts }

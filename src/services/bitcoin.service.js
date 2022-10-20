@@ -19,18 +19,59 @@
     For example: https://api.blockchain.info/charts/market-price?timespan=5months &format=json&cors=true
 */
 
+import axios from 'axios'
+import { storageService } from './storage.service'
+
 export const bitcoinService = {
     getRate,
     getMarketPriceHistory,
     getAvgBlockSize,
+    getExchangeRates,
+    getCurrencyOptions
 }
 
-function getRate() {
-    return '0%'
+async function getRate(currency = 'USD') {
+    const exchangeRates = await getExchangeRates()
+    // console.log(exchangeRates)
+    // console.log(exchangeRates[currency])
+    return exchangeRates[currency]
 }
 
-function getMarketPriceHistory() {
-    return 'No History'
+async function getExchangeRates() {
+    let exchangeRates = storageService.load('EXCHANGE_RATES')
+    if (!exchangeRates) {
+        exchangeRates = await axios.get('https://blockchain.info/ticker')
+        exchangeRates = exchangeRates.data
+        storageService.save('EXCHANGE_RATES', exchangeRates)
+    }
+    return exchangeRates
+}
+
+async function getCurrencyOptions() {
+    const exchangeRates = await getExchangeRates()
+    const options = []
+    for (let currency in exchangeRates) {
+        options.push(currency)
+    }
+    return options
+}
+
+/*
+    coverting to date:
+    function getDate(value) {
+        const newDate = new Date(value.x * 1000)
+        const dateToDisplay = new Intl.DateTimeFormat("en-US").format(newDate)
+    }
+*/
+
+async function getMarketPriceHistory() {
+    let marketPriceHistory = storageService.load('MARKET_PRICE_DATA')
+    if (!marketPriceHistory) {
+        marketPriceHistory = await axios.get('https://api.blockchain.info/charts/market-price?cors=true')
+        marketPriceHistory = marketPriceHistory.data
+        storageService.save('MARKET_PRICE_DATA', marketPriceHistory)
+    }
+    return marketPriceHistory
 }
 
 function getAvgBlockSize() {

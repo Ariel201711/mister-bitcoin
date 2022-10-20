@@ -6,7 +6,7 @@
         <button>
             <RouterLink :to="`/contact/edit/${contact._id}`">Edit</RouterLink>
         </button>
-        <button @click="onRemoveContact(contact._id)">x</button>
+        <button @click="onRemoveContact(contact._id)">Remove</button>
     </section>
 </template>
 
@@ -17,19 +17,11 @@ export default {
             type: Object,
             required: true,
         },
-        // onRemoveContact: {
-        //     type: Function,
-        //     required: true,
-        // }
     },
-    // inject: ["onRemoveContact"],
     methods: {
         onRemoveContact(contactId) {
-            this.$parent.$emit('contact-removed', contactId) // this is not good solution! must find another solution!!!!
+            this.$emit('contact-removed', contactId)
         },
-        // removeContact(contactId) {
-        //     this.onRemoveContact(contactId)
-        // }
     },
 
 }

@@ -3,15 +3,15 @@ import contact from './modules/contact.js'
 
 const storeOptions = {
     strict: true,
-    state() {
+    // state() {
 
-    },
-    mutations: {
+    // },
+    // mutations: {
 
-    },
-    getters: {
+    // },
+    // getters: {
 
-    },
+    // },
     modules: {
         contact,
     }

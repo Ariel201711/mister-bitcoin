@@ -3,7 +3,7 @@ import Home from '../views/Home.vue'
 import Contact from '../views/Contact.vue'
 import ContactEdit from '../views/ContactEdit.vue'
 import ContactDetails from '../views/ContactDetails.vue'
-import Stats from '../views/Stats.vue'
+import Charts from '../views/Charts.vue'
 
 const routerOptions = {
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -31,7 +31,7 @@ const routerOptions = {
     {
       path: '/stats',
       name: 'statistics',
-      component: Stats
+      component: Charts
     },
     {
       path: '/about',

@@ -1,16 +1,15 @@
 <template>
     <ContactFilter @filter="onSetFilter"/>
-    <button>
-      <RouterLink :to="`/contact/edit`">Add Contact</RouterLink>
-    </button>
+    <ContactAdd/>
     <ContactList @contact-removed="onRemoveContact" :contacts="contactsToShow"/>
 </template>
 
 <script>
-import { contactService } from '@/services/contact.service.js'
+// import { contactService } from '@/services/contact.service.js'
 
 import ContactFilter from '@/components/ContactFilter.vue'
 import ContactList from '@/components/ContactList.vue'
+import ContactAdd from '@/components/ContactAdd.vue'
 
 export default {
   data() {
@@ -24,13 +23,15 @@ export default {
     this.$store.dispatch({ type: 'loadContacts' })
   },
   methods: {
-    async onRemoveContact(contactId) {
-        try {
-            const updatedContacts = await contactService.deleteContact(contactId)
-            this.contacts = [...updatedContacts]
-        } catch {
-            console.log('cannot remove contact!')
-        }
+    onRemoveContact(contactId) {
+        // try {
+        //     const updatedContacts = await contactService.deleteContact(contactId)
+        //     this.contacts = [...updatedContacts]
+        // } catch {
+        //     console.log('cannot remove contact!')
+        // }
+
+        this.$store.dispatch({ type: 'removeContact', contactId })
     },
     onSetFilter(filterBy) {
         this.filterBy = filterBy
@@ -41,10 +42,13 @@ export default {
         const regex = new RegExp(this.filterBy.name, 'i')
         return this.contacts.filter(contact => regex.test(contact.name))       
     },
-    contacts() { return this.$store.getters.contacts }
+    contacts() { 
+      return this.$store.getters.contacts 
+    }
   },
   components: {
     ContactFilter,
+    ContactAdd,
     ContactList,
   }
 }
