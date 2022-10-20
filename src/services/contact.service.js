@@ -1,3 +1,5 @@
+import { storageService } from "./storage.service"
+
 export const contactService = {
     getContacts,
     getContactById,
@@ -139,10 +141,12 @@ function sort(arr) {
 
 function getContacts(filterBy = null) {
     return new Promise((resolve, reject) => {
-        var contactsToReturn = contacts
+        let contactsToReturn = storageService.load('CONTACTS')
+        if(!contactsToReturn) contactsToReturn = contacts
         if (filterBy && filterBy.term) {
             contactsToReturn = filter(filterBy.term)
         }
+        storageService.save('CONTACTS', contactsToReturn)
         resolve(sort(contactsToReturn))
     })
 }
@@ -160,6 +164,7 @@ function deleteContact(id) {
         if (index !== -1) {
             contacts.splice(index, 1)
         }
+        storageService.save('CONTACTS', [...contacts])
 
         resolve([...contacts])
     })
@@ -171,6 +176,7 @@ function _updateContact(contact) {
         if (index !== -1) {
             contacts[index] = contact
         }
+        storageService.save('CONTACTS', [...contacts])
         resolve(contact)
     })
 }
@@ -179,6 +185,7 @@ function _addContact(contact) {
     return new Promise((resolve, reject) => {
         contact._id = _makeId()
         contacts.push(contact)
+        storageService.save('CONTACTS', [...contacts])
         resolve(contact)
     })
 }
