@@ -1,9 +1,7 @@
 <template>
-  <header class="app-header">
-    <div>upbit</div>
+  <header class="app-header full main-layout flex">
     <nav>
-      <RouterLink to="/" class="clean-link">Home</RouterLink>
-      <RouterLink to="/about" class="clean-link">About</RouterLink>
+      <RouterLink to="/" class="clean-link">misterBitcoin</RouterLink>
       <RouterLink to="/contact" class="clean-link">Contacs</RouterLink>
       <RouterLink to="/stats" class="clean-link">Statistics</RouterLink>
     </nav>

@@ -1,7 +1,7 @@
 <template>
-  <footer>
+  <footer class="app footer full main-layout">
     <small>
-      <p>&copy; All rights reserved to <span>upbit</span>, {{ currYear }}</p> 
+      <p>&copy; All rights reserved to <span>misterBitcoin</span>, {{ currYear }}</p> 
     </small>
   </footer>
 </template>

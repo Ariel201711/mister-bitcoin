@@ -1,15 +1,18 @@
 <template>
   <header>
     <h1>Hello {{loggedInUser.name}}, Your Balance is: ${{loggedInUser.balance}}</h1>
-    <h3 v-if="bitcoinRate">{{currRate}}</h3>
-    <h3 v-else>Loading...</h3>
+    <section class="bitcoin-rates-container flex">
+      <h3 v-if="bitcoinRate">{{currRate}}</h3>
+      <h3 v-else>Loading...</h3>
+      <select @change="getCurrExchangeRate" v-model="currency">
+        <option v-for="currencyOption in currencyOptions" :key="currencyOption" :value="currencyOption">
+        {{currencyOption}}
+        </option>
+      </select> 
+    </section>
   </header>
   <main>
-    <select @change="getCurrExchangeRate" v-model="currency">
-      <option v-for="currencyOption in currencyOptions" :key="currencyOption" :value="currencyOption">
-        {{currencyOption}}
-      </option>
-    </select>   
+  
   </main>
 </template>
 
