@@ -1,6 +1,6 @@
 <template>
     <button>
-      <RouterLink :to="`/contact/edit`">Add Contact</RouterLink>
+      <RouterLink :to="`/contact/edit`" class="clean-link">Add Contact</RouterLink>
     </button>
 </template>
 

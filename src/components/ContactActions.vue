@@ -1,10 +1,10 @@
 <template>
     <section class="actions">
         <button>
-            <RouterLink :to="`/contact/${contact._id}`">Details</RouterLink>
+            <RouterLink :to="`/contact/${contact._id}`" class="clean-link">Details</RouterLink>
         </button>
         <button>
-            <RouterLink :to="`/contact/edit/${contact._id}`">Edit</RouterLink>
+            <RouterLink :to="`/contact/edit/${contact._id}`" class="clean-link">Edit</RouterLink>
         </button>
         <button @click="onRemoveContact(contact._id)">Remove</button>
     </section>

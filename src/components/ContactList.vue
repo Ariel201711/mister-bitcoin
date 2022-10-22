@@ -1,7 +1,7 @@
 <template>
     <section class="contact-list-container">
         <h1>Contact List</h1>
-        <ul class="contact-list">
+        <ul class="contact-list clean-list">
             <li v-for="contact in contacts" :key="contact._id">
                 <ContactPreview :contact="contact"/>
                 <ContactActions :contact="contact" @contact-removed="onRemoveContact"/>
