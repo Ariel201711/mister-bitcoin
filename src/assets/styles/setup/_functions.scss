@@ -11,5 +11,5 @@
 
 // LH functions
 @function lh($pixels, $context: 16px) {
-    @return ($pixels/$context);
+    @return calc($pixels/$context);
 }

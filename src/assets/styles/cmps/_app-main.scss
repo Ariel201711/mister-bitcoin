@@ -1,3 +1,10 @@
 .app-main {
-    min-height: calc(100vh - 4em);
+    padding-block: 100px;
+    min-height: calc(100vh - 4em - 60px);
+    background-color: $clr4;
+    background-image: url(@/assets/img/home-hero-gradient.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $clr2;
 }

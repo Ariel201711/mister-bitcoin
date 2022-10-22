@@ -1,4 +1,13 @@
 .app-header {
+    padding-block: 20px;
+    background-color: $clr1;
+    color: $clr2;
+    border-bottom: 1px solid $clr6;
+
+    .logo {
+        font-size: rem(20px);
+    }
+
     nav {
         a {
             display: inline-block;

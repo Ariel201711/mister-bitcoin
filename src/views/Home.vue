@@ -1,9 +1,11 @@
 <template>
   <header>
-    <h1>Hello {{loggedInUser.name}}, Your Balance is: ${{loggedInUser.balance}}</h1>
+    <h1>The world's most popular way to buy, sell, and trade bitcoin</h1>
+    <p>Trusted by millions since 2011 with over $1 Trillion in bitcoin transactions.</p>
+    <h4>Welcome {{loggedInUser.name}}, Your Balance is: ${{loggedInUser.balance}}</h4>
     <section class="bitcoin-rates-container flex">
-      <h3 v-if="bitcoinRate">{{currRate}}</h3>
-      <h3 v-else>Loading...</h3>
+      <h4 v-if="bitcoinRate">{{currRate}}</h4>
+      <h4 v-else>Loading...</h4>
       <select @change="getCurrExchangeRate" v-model="currency">
         <option v-for="currencyOption in currencyOptions" :key="currencyOption" :value="currencyOption">
         {{currencyOption}}

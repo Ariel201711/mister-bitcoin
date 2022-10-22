@@ -1,5 +1,5 @@
 <template>
-  <footer class="app footer full main-layout">
+  <footer class="app-footer full main-layout">
     <small>
       <p>&copy; All rights reserved to <span>misterBitcoin</span>, {{ currYear }}</p> 
     </small>
