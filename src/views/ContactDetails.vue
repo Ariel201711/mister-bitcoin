@@ -1,8 +1,6 @@
 <template>
     <div v-if="contact" class="contact-details flex column">
-        <button class="btn-back flex">
-            <RouterLink to="/contact" class="back-link clean-link">←</RouterLink>
-        </button>
+        <RouterLink to="/contact" class="back-link clean-link"><button class="btn-back flex">←</button></RouterLink>
         <img :src="contactImgUrl" alt="No Contact Image">
         <h1>contact Details</h1>
         <h2>{{contact.name}}</h2>
