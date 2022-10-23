@@ -1,8 +1,8 @@
 .contact-actions {
     gap: 20px;
+
     button {
         border-radius: 80px;
-        min-width: 5%;
         &.btn-remove {
             background-color: red;
             color: $clr2;
