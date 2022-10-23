@@ -1,13 +1,13 @@
 <template>
-    <div v-if="contact" class="contact-details">
+    <div v-if="contact" class="contact-details flex column">
+        <button class="btn-back flex">
+            <RouterLink to="/contact" class="back-link clean-link">←</RouterLink>
+        </button>
+        <img :src="contactImgUrl" alt="No Contact Image">
         <h1>contact Details</h1>
         <h2>{{contact.name}}</h2>
         <h3>Phone Number: {{contact.phone}}</h3>
         <h3>Email: {{contact.email}}</h3>
-        <img src="https://robohash.org/{{contact._id}}" alt="No Contact Image">
-        <button>
-            <RouterLink to="/contact">Back</RouterLink>
-        </button>
     </div>
     <div v-else>Loding contact details...</div>
 </template>
@@ -23,6 +23,11 @@
         async created() {
             const _id = this.$route.params._id
             this.contact = await contactService.getContactById(_id)
+        },
+        computed: {
+            contactImgUrl() {
+                return `https://joeschmoe.io/api/v1/${this.contact._id}@ashallendesign.co.uk`
+            }
         }
     }
 </script>

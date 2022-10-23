@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <section class="contact-add">
       <button>
-        <RouterLink :to="`/contact/edit`" class="clean-link">Add Contact</RouterLink>
+        <RouterLink :to="`/contact/edit`" class="clean-link">➕</RouterLink>
       </button>
   </section>
 </template>

@@ -38,6 +38,7 @@ export default {
       type: Object,
       default: () => {
         return {
+          
         }
       }
     },
@@ -56,14 +57,16 @@ export default {
     return {
       chartData: {
         labels: this.labels,
-        datasets: [{
-          data: this.data, backgroundColor: [
-            '#00dddf'
-          ], label: '1 Bit coin in USD',
-        }]
+        datasets: [
+          {
+            data: this.data, 
+            backgroundColor: ['#0ff', '#0ff'],
+            label: '1 Bit coin in USD',
+          }
+        ]
       },
       chartOptions: {
-        responsive: true
+        responsive: true,
       }
     }
   },

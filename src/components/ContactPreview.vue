@@ -1,6 +1,8 @@
 <template>
-    <h2>{{contact.name}}</h2>
-    <h3>Phone Number: {{contact.phone}}</h3>
+    <section class="contact-preview">
+        <h2>{{contact.name}}</h2>
+        <h3>Phone Number: {{contact.phone}}</h3>
+    </section>
 </template>
 
 <script>

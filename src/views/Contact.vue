@@ -1,7 +1,12 @@
 <template>
-    <ContactFilter @filter="onSetFilter"/>
-    <ContactAdd/>
+  <section class="contact flex column">
+    <h1>Contact List</h1>
+    <section class="contact-top-operations flex">
+      <ContactFilter @filter="onSetFilter"/>
+      <ContactAdd/>
+    </section>
     <ContactList @contact-removed="onRemoveContact" :contacts="contactsToShow"/>
+  </section>
 </template>
 
 <script>

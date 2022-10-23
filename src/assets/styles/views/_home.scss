@@ -1,3 +1,17 @@
-.bitcoin-rates-container {
+.home-header, .bitcoin-rates-container {
     gap: 20px;
+}
+
+.bitcoin-rates-container {
+
+    select {
+        outline: 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        option {
+            cursor: pointer;
+        }
+    }
 }

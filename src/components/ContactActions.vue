@@ -1,12 +1,12 @@
 <template>
-    <section class="actions">
-        <button>
-            <RouterLink :to="`/contact/${contact._id}`" class="clean-link">Details</RouterLink>
+    <section class="contact-actions flex">
+        <button class="btn-details">
+            <RouterLink :to="`/contact/${contact._id}`" class="clean-link">ℹ️</RouterLink>
         </button>
-        <button>
-            <RouterLink :to="`/contact/edit/${contact._id}`" class="clean-link">Edit</RouterLink>
+        <button class="btn-edit">
+            <RouterLink :to="`/contact/edit/${contact._id}`" class="clean-link">✏️</RouterLink>
         </button>
-        <button @click="onRemoveContact(contact._id)">Remove</button>
+        <button @click="onRemoveContact(contact._id)" class="btn-remove">🗑️</button>
     </section>
 </template>
 

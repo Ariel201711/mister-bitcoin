@@ -1,12 +1,12 @@
 <template>
     <section class="contact-list-container">
-        <h1>Contact List</h1>
-        <ul class="contact-list clean-list">
-            <li v-for="contact in contacts" :key="contact._id">
-                <ContactPreview :contact="contact"/>
-                <ContactActions :contact="contact" @contact-removed="onRemoveContact"/>
-            </li>
-
+        <ul class="contact-list clean-list flex column"> 
+            <TransitionGroup name="contact-card-container">
+                <li v-for="contact in contacts" :key="contact._id" class="contact-card flex column">
+                    <ContactPreview :contact="contact"/>
+                    <ContactActions :contact="contact" @contact-removed="onRemoveContact"/>
+                </li>
+            </TransitionGroup>
         </ul>
     </section>
 </template>

@@ -1,6 +1,9 @@
 <template>
-  <section v-if="contact" class="contact-edit-container">
-    <form @submit.prevent="onSave" class="contact-edit">
+  <section v-if="contact" class="contact-edit-container flex column">
+    <div>
+      <button @click="$router.back()" class="btn-back">←</button>
+    </div>
+    <form @submit.prevent="onSave" class="contact-edit flex column">
       <h1>{{ formTitle }}</h1>
       <input v-model="contact.name" placeholder="Enter Name" type="text" />
       <input
@@ -13,9 +16,8 @@
         placeholder="nickname@mail.com"
         type="email"
       />
-      <button>Save</button>
+      <button class="btn-save">💾</button>
     </form>
-    <button @click="$router.back()">Back</button>
   </section>
   <div v-else>Loading...</div>
 </template>
