@@ -32,8 +32,6 @@ export const bitcoinService = {
 
 async function getRate(currency = 'USD') {
     const exchangeRates = await getExchangeRates()
-    // console.log(exchangeRates)
-    // console.log(exchangeRates[currency])
     return exchangeRates[currency]
 }
 
@@ -66,6 +64,7 @@ async function getMarketPriceHistory() {
     return marketPriceHistory
 }
 
-function getAvgBlockSize() {
-    return '50'
+async function getAvgBlockSize() {
+    const str = `https://api.blockchain.info/charts/avg-block-size?timespan=5months&format=json&cors=true`
+    const avgBlockSize = await axios.get(str)
 }

@@ -1,6 +1,6 @@
 <template>
     <section class="contact-filter">
-        <input @input="onSetFilter" v-model="filterBy.name" placeholder="Search For Contact" type="search">
+        <input @input="onSetFilter" v-model="filterBy.name" placeholder="Search a Contact" type="search"/>
     </section>
 </template>
 

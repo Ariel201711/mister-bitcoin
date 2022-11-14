@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     currRate() {
-      return `Bitcoin/${this.bitcoinRate.symbol} ${this.bitcoinRate.last}`
+      return `BTC/${this.bitcoinRate.symbol} ${this.bitcoinRate.last}`
     }
   }
 }

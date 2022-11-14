@@ -16,7 +16,7 @@ export default {
     }
   },
   async created() {
-    await this.getMarketPriceHistory();
+    await this.getMarketPriceHistory()
   },
   methods: {
     async getMarketPriceHistory() {
