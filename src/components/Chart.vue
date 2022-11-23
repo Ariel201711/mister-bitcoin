@@ -61,7 +61,7 @@ export default {
           {
             data: this.data, 
             backgroundColor: ['#0ff', '#0ff'],
-            label: '1 Bit coin in USD',
+            label: '1 Bitcoin in USD',
           }
         ]
       },
