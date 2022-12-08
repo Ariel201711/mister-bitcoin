@@ -24,7 +24,7 @@
         },
         computed: {
             contactImgUrl() {
-                return `https://joeschmoe.io/api/v1/${this.contact._id}@ashallendesign.co.uk`
+                return `https://avatars.dicebear.com/api/personas/${this.contact._id}.jpg`
             }
         }
     }
