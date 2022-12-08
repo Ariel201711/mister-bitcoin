@@ -55,7 +55,6 @@
 <br/>
 
 ### 3. Contact Info Example Page
-> note!!! use this template for every contact image: https://avatars.dicebear.com/api/adventurer/${this.contact._id}.png
 <br/>
 <img src="./src/assets/img/screen-shot/contact-info-page-example-computer-screen01.png"/>
 <br/>
