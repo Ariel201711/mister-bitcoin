@@ -5,11 +5,11 @@
         <RouterLink to="/" class="logo clean-link">
           <h3>misterBitcoin.com</h3>
         </RouterLink>
-        <RouterLink to="/contact" class="clean-link">Contacs</RouterLink>
+        <RouterLink to="/contact" class="clean-link">Contacts</RouterLink>
         <RouterLink to="/stats" class="clean-link">Statistics</RouterLink>
       </nav>
       <div class="loggedin-user"> 
-        <h4>Welcome {{loggedInUser.name}}, Your Balance is: BTC{{loggedInUser.balance}}</h4>
+        <h4>Welcome {{loggedInUser.name}}, Your Balance is: BTC {{loggedInUser.balance}}</h4>
       </div>
     </div>
   </header>
